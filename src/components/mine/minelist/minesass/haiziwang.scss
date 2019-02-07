@@ -1,0 +1,33 @@
+.haiz{
+    width: 100%;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    >.haizt{
+        height: 37px;
+        display: flex;
+        line-height: 37px;
+        padding: 0 15px 0 15px;
+        justify-content:space-between;
+     
+    }
+     >.haizb{
+       flex: 1;
+        >ul{
+         height: 100%;
+         width: 100%;  
+        
+         >li{
+          width: 25%;
+          height: 100%;
+             text-align:center;
+             >i{
+                 font-size: 20px;
+                 display: inline-block;
+                 margin-top: 15px;
+                 margin-bottom: 5px;
+             }
+         } 
+        }
+    }
+}

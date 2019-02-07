@@ -1,0 +1,31 @@
+ .miaosha{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        >.miao1{
+            flex: 1;
+            display: flex;
+           
+            >li{
+                 width: 25%;
+                height: 100%;             
+                border: #0DC441 solid 1px;
+            }
+             .miao{
+               
+                 flex: 1;
+            }
+        }
+         >.miao2{
+            flex: 1;
+            display: flex;
+           
+            >li{
+                flex: 1;
+                border: #0DC441 solid 1px;
+            }
+           
+        }
+        
+    }

@@ -1,0 +1,17 @@
+ .publics{
+     width: 100%;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     >.tu{
+         flex: 1;
+         >img{
+             height: 120px;
+            width: 100%;
+         }
+     }
+     >.goods{
+         flex: 1;
+         
+     }
+ }

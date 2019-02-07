@@ -1,0 +1,35 @@
+.changyong{
+    width: 100%;
+    height: 318px;
+    display: flex;
+    flex-direction: column;
+    >.changyongt{
+        height: 37px;
+        display: flex;
+        line-height: 37px;
+        padding: 0 15px 0 15px;
+        justify-content:space-between;
+     
+    }
+     >.changyongb{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        >ul{
+            flex: 1;
+         display: flex;
+        
+         >li{
+             flex: 1;
+             text-align:center;
+             >i{
+                 font-size: 20px;
+                 display: inline-block;
+                 margin-top: 15px;
+                 margin-bottom: 5px;
+                 color: lightblue;
+             }
+         } 
+        }
+    }
+}

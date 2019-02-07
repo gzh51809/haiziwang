@@ -1,0 +1,24 @@
+.wode{
+    height: 150px;
+    width: 100%;
+       background-image: url("https://cmspic-10004025.image.myqcloud.com/b69569f9-6024-4e47-86d1-917fe1ec1933?imageMogr2/crop/750x350/quality/80/format/jpg");
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 20px;
+    >img{
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;  
+      margin-left: 43%;
+      margin-bottom: 10px;
+    }
+    >div{
+        color: #fff;
+        >div{
+            margin-top: 10px;
+            >i{
+                
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+ .tishi{
+     display: flex;
+     height: 60px;
+     width: 100%;
+     padding: 8px;
+       background: #FEE7A0;
+       >.p1{
+           width: 30px;
+           >img{
+               width: 13px;
+               height: 13px;
+               margin-left: 10px;
+           }
+       }
+       >.p2{
+           flex: 1;
+           color: #9D7322;
+       }
+ }
