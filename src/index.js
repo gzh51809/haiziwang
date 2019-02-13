@@ -4,14 +4,21 @@ import './index.css';
 import './sass/base.css';
 import './sass/index.scss';
 import iconfont from './iconfont/iconfont.css';
-
+import {Route,Link,NavLink,Switch,Redirect,withRouter,HashRouter} from 'react-router-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+//import { createStore } from 'redux';
+import {Provider} from 'react-redux';
+import store from './store';
+//生成store
+//let store = createStore(reducer);
 
 ReactDOM.render(
-	
-	<App/>
-
+	<Provider store={store}>
+		<HashRouter>
+			<Route component={App}/>
+		</HashRouter>
+	</Provider>
 	,
 	document.getElementById('root')
 	

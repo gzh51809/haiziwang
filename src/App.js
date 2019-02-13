@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import {Route,Link,NavLink,Switch,Redirect,withRouter,HashRouter} from 'react-router-dom';
 
+import PropTypes from 'prop-types';
+import {ReactReduxContext,connect} from 'react-redux';
+import * as all from 'react-redux';
+console.log('react-redux:',all)
 
 import Home from './components/home/Home';
 import List from './components/list/List';
 import Cart from './components/cart/Cart';
 import Mine from './components/mine/Mine';
 import Mom from './components/mom/Mom';
+import Detail from './components/detail/detail';
+import LoGin from './components/login/login';
 
 import logo from './logo.svg';
 import './App.css';
@@ -65,9 +71,12 @@ class App extends Component {
        
     }
 	
-	
+	  // 设置静态属性，用户获取Provider提供的store数据
+    static contextType = ReactReduxContext;
+
 	
   render() {
+  	
     return  <HashRouter>
 				      <div>
 				      			<div className="mian">
@@ -76,55 +85,13 @@ class App extends Component {
 				      			  	<Route path="/cart" component={Cart}></Route>
 				      			  	<Route path="/mine" component={Mine}></Route>
 				      			  	<Route path="/list" component={List}></Route>
+				      			  	<Route path="/detail/:id" component={Detail}></Route>
+				      			  	<Route path="/login" component={LoGin}></Route>				      			  	
 				      			  	<Route path="/mom" component={Mom}></Route>
 				      			  	<Redirect from="/" to="home/datahome"/>
 				      			  	</Switch>
 				      			</div>
-							 	<div className="bottom-tools">
-				                   {/*{
-				                       this.state.menu.map(menu=>{
-				                            return (
-				                            	
-				                                <div key={menu.text}>  
-				                                 	<NavLink to={menu.path} replace>
-				                                		<i className={[menu.icon+' '+"iconfont"]}></i>
-				            							<p>{menu.text}</p>
-				            						</NavLink>
-				                                </div>
-				                            )
-				                        })
-				                    }*/}
-				                    <div>  
-				                        <NavLink to="/home/datahome" replace>
-				                               <i className="iconfont icon-zhaocaimao"></i>
-				            					<p>商城</p>
-				            		     </NavLink>				            		   
-				                    </div>
-				                    <div>  
-				                        <NavLink to="/list/lis" replace>
-				                               <i className="iconfont icon-el-icon-fenlei"></i>
-				            					<p>分类</p>
-				            		     </NavLink>				            		   
-				                    </div>
-				                     <div>  
-				                        <NavLink to="/mom" replace>
-				                               <i className="iconfont icon-jifenshangchengtequan"></i>
-				            					<p>妈咪社</p>
-				            		     </NavLink>				            		   
-				                    </div>
-				                     <div>  
-				                        <NavLink to="/cart" replace>
-				                               <i className="iconfont icon-gouwuche"></i>
-				            					<p>购物车</p>
-				            		     </NavLink>				            		   
-				                    </div>
-				                     <div>  
-				                        <NavLink to="/mine" replace>
-				                               <i className="iconfont icon-wo"></i>
-				            					<p>我的</p>
-				            		     </NavLink>				            		   
-				                    </div>
-				                </div>
+							 	
 				                
 				             
 				      </div>
@@ -134,5 +101,27 @@ class App extends Component {
 }
 
 
+let mapStateToProps = (state)=>{
+    console.log('mapStateToProps:',state)
+    return {
+        // 把goodslist属性映射到App的props中
+//      goodslist:state.cart.goodslist,
+//      price:state.goods.price
+    }
+}
+
+let mapDispatchToProps = (dispatch)=>{
+    return {
+        addcart:(goods)=>{
+            dispatch({
+                type:'ADD_TO_CART',
+                payload:goods
+            })
+        }
+    }
+}
+
+App=withRouter(App);
+App = connect(mapStateToProps)(App);
 
 export default App;

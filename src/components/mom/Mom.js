@@ -1,4 +1,5 @@
 import React from 'react';
+import BottomCom from '../ccoms/bottomcom';
 export default class Mom extends React.Component{
 	constructor(props){
 		super(props)
@@ -6,8 +7,9 @@ export default class Mom extends React.Component{
 	}
 	
 	render(){
-		return <div>
-		<h1>Mom</h1>
+		return <div className="mom">
+		<div className="momcom">Mom</div>
+			<BottomCom></BottomCom>
 		</div>
 	}
 }

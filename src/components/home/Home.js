@@ -16,6 +16,7 @@ import Food from './homelist/Food';
 import Cheyi from './homelist/Cheyi';
 import Baoxian from './homelist/Baoxian';
 
+import BottomCom from '../ccoms/bottomcom';
 
 export default class Home extends React.Component{
 	constructor(props){
@@ -176,7 +177,8 @@ export default class Home extends React.Component{
 				      			  	<Route path="/home/cheyi" component={Cheyi}></Route>
 				      			  	<Route path="/home/baoxian" component={Baoxian}></Route>				      			  
 				      			</Switch>
-				   		 </div>  			
+				   		 </div>
+				   		 <BottomCom></BottomCom>
 				</div>
 	}
 }

@@ -4,17 +4,51 @@ import './homesass/publics.scss';
 export default class Publics extends React.Component{
 	constructor(props){
 		super(props)
-		this.state={}
+		this.state={
+			datalis:[]
+		}
+	}
+	
+		componentWillMount(){
+		this.loadHomeLis();
+	}
+	
+	
+		loadHomeLis=()=>{
+				const data=require('./homejson/data1.json');
+//				console.log(data.data.customFloor[2].data
+//				)
+       			 this.setState({
+       			  datalis:data.data.customFloor[2].data
+     		 })
+       			 
+			
+				
 	}
 	
 	render(){
 		return <div className="publics">
 			<div className="tu">
-				<img src="https://cmspic-10004025.image.myqcloud.com/323ddf40-2475-11e9-8cfd-53bbb5988695_size_750x300"/>			
+				<img src={this.state.datalis[0].image}/>			
 			</div>
 			<div className="goods">
-							
-			
+				<ul>
+					{
+						this.state.datalis[0].products.map(item=>{
+				
+							return <li key={item.skuid}>
+								<img src={item.picurl}/>
+								<p className="pname">
+									{item.name}
+								</p>
+								<p className="jiage">
+								&yen;
+								{item.price/100}
+								</p>
+							</li>
+						})
+					}
+				</ul>
 			</div>
 		</div>
 	}

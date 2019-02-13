@@ -3,6 +3,7 @@
      height: 100%;
      display: flex;
      flex-direction: column;
+     background: #fff;
      >.tu{
          flex: 1;
          >img{
@@ -12,6 +13,37 @@
      }
      >.goods{
          flex: 1;
-         
+          >ul{
+                             
+                              overflow-y: hidden;
+                              overflow-x: scroll;
+                               width: 100%;
+                               height: 100%;
+                            display: flex;
+                           >li{
+                              flex:0 0 auto;
+                              height: 120px;
+                              width: 100px;
+                              padding: 10px;
+                             text-align: center;
+                              >img{
+                                  width: 70%;
+                                  margin-left: 15px;
+                              }
+                              >.pname{
+                                  width: 100%;
+                                  height: 26px;
+                                  overflow: hidden;
+                                  font-size: 8px;
+                                  margin-bottom: 5px;
+                              }
+                              >.jiage{
+                                  font-size: 10;
+                                  font-size: 8px;
+                                  
+                                  color: hotpink;
+                              }
+                           }
+                         }
      }
  }

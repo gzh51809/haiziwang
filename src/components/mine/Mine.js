@@ -1,5 +1,5 @@
 import React from 'react';
-
+import BottomCom from '../ccoms/bottomcom';
 import WoDe from './minelist/wode';
 import BaoXian from './minelist/baoxian';
 import ChangYong from './minelist/changyong';
@@ -7,7 +7,7 @@ import DingDan from './minelist/dingdan';
 import HaiZi from './minelist/haizi';
 import QianBao from './minelist/qianbao';
 import TiShi from './minelist/tishi';
-
+//import AottomCom from '../ccoms/bottomcom';
 
 export default class Mine extends React.Component{
 	constructor(props){
@@ -31,6 +31,7 @@ export default class Mine extends React.Component{
    				 		<ChangYong></ChangYong>
    				 		<HaiZi></HaiZi>
    				 </div>
+   				<BottomCom></BottomCom>
 		</div>
 	}
 }

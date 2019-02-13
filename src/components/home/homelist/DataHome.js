@@ -6,6 +6,21 @@ import TouTiao from './datahome/TouTiao';
 import MiaoSha from './datahome/miaosha';
 import YouXuan from './datahome/youxuan';
 import Publics from './datahome/publics';
+import Publics2 from './datahome/publics2';
+import Publics3 from './datahome/publics3';
+import Publics4 from './datahome/publics4';
+import Publics5 from './datahome/publics5';
+import Publics6 from './datahome/publics6';
+import Publics7 from './datahome/publics7';
+import Publics8 from './datahome/publics8';
+import Publics9 from './datahome/publics9';
+import Publics10 from './datahome/publics10';
+import Publics11 from './datahome/publics11';
+import Publics12 from './datahome/publics12';
+import Publics13 from './datahome/publics13';
+import HomeLis from './datahome/homelis';
+import ZouMaDeng from './datahome/zoumadeng';
+import PinTuan from './datahome/pintuan';
 
 import { Carousel } from 'antd';
 export default class DataHome extends React.Component{
@@ -18,6 +33,8 @@ export default class DataHome extends React.Component{
 	
 	componentWillMount(){
 		this.loadDataHome();
+//		console.log(this.props.history)
+		
 	}
 	 componentWillReceiveProps(nextProps) {
 //     console.log(nextProps);
@@ -26,8 +43,8 @@ export default class DataHome extends React.Component{
 	
 		loadDataHome=()=>{
 				const data=require('../homedata/data.json');
-				console.log(data.data
-				)
+//				console.log(data.data
+//				)
        			 this.setState({
        			  promotionList:data.data.promotionList[0].data
      		 })
@@ -37,7 +54,7 @@ export default class DataHome extends React.Component{
 	render(){
 		return <div className="datahome">
 			 <div className="datahome1">
-			 	<img src="https://cmspic-10004025.image.myqcloud.com/3ffe8520-2471-11e9-8cfd-53bbb5988695_size_357x190"/>
+			 	<ZouMaDeng></ZouMaDeng>
 			 </div>
 			<div className="datahome2">
 				<ul>
@@ -75,9 +92,13 @@ export default class DataHome extends React.Component{
 			<div className="datahome6">
 				<MiaoSha></MiaoSha>
 			</div>
+			<div className="pintuan">
+				<PinTuan></PinTuan>
+			</div>
 			<div className="datahome7">
 				<YouXuan></YouXuan>
 			</div>
+			
 			<div className="datahome8">
 				<p>
 				热门精选&nbsp;实时推荐
@@ -89,53 +110,56 @@ export default class DataHome extends React.Component{
 			</div>
 			
 			<div className="goods1">
-				<Publics></Publics>
+				<Publics2></Publics2>
 			</div>
 			
 			<div className="goods1">
-				<Publics></Publics>
+				<Publics3></Publics3>
 			</div>
 			
 			<div className="goods1">
-				<Publics></Publics>
+				<Publics4></Publics4>
 			</div>
 			
 			<div className="goods1">
-				<Publics></Publics>
+				<Publics5></Publics5>
 			</div>
 			
 			<div className="goods1">
-				<Publics></Publics>
+				<Publics6></Publics6>
 			</div>
 			
 			<div className="goods1">
-				<Publics></Publics>
+				<Publics7></Publics7>
 			</div>
 			
 			<div className="goods1">
-				<Publics></Publics>
+				<Publics8></Publics8>
 			</div>
 			
 			<div className="goods1">
-				<Publics></Publics>
+				<Publics9></Publics9>
 			</div>
 			
 			<div className="goods1">
-				<Publics></Publics>
+				<Publics10></Publics10>
 			</div>
 			
 			<div className="goods1">
-				<Publics></Publics>
+				<Publics11></Publics11>
 			</div>
 			
 			<div className="goods1">
-				<Publics></Publics>
+
+				<Publics12></Publics12>
 			</div>
 			
 			<div className="goods1">
-				<Publics></Publics>
+				<Publics13></Publics13>
 			</div>
-			
+			<div className="homeb">
+				<HomeLis history={this.props.history}></HomeLis>
+			</div>
 			
 		</div>
 	}

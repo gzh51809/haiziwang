@@ -4,7 +4,7 @@ import {Route,Link,NavLink,Switch,Redirect,withRouter,HashRouter} from 'react-ro
 import Lis from './lists/lis';
 import PingPai from './lists/pingpai';
 import Age from './lists/age';
-
+import BottomCom from '../ccoms/bottomcom';
 export default class List extends React.Component{
 	constructor(props){
 		super(props);
@@ -53,7 +53,8 @@ export default class List extends React.Component{
 				      			  	<Route path="/list/pingpai" component={PingPai}></Route>
 				      			  	<Route path="/list/age" component={Age}></Route>				      			 			      			  		      			  
 				      			</Switch>
-				   		 </div>  			
+				   		 </div>  	
+				   		 <BottomCom></BottomCom>
 		</div>
 	}
 }

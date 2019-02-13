@@ -7,7 +7,7 @@ export default class Cart extends React.Component{
 	
 	render(){
 		return <div>
-		<h1>CART</h1>
+		<h1>品牌</h1>
 		</div>
 	}
 }

@@ -1,0 +1,23 @@
+.bottom-tools{
+               display: flex;
+               height: 60px;
+               width: 100%;
+               background: #eeeeff;
+               border-top:1px #ccc solid;
+               >div{
+                   flex: 1;
+              
+                   text-align: center;
+                  p{
+                    font-size: 8px;
+                    color: #000000;
+                  }
+                  i{
+                      display: inline-block;
+                    margin-top:6px;
+                    margin-bottom: 3px;
+                    font-size: 22px;
+                    color: deeppink;
+                  }
+               }
+           }
