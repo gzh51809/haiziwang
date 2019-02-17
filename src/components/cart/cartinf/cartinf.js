@@ -15,7 +15,8 @@ import cartAction from '../../../actions/cartAction';
     
     indeterminate: true,
     checkAll: false,
-    datalis:[]
+    datalis:[],
+   
 		}
 		
 	}
@@ -32,8 +33,8 @@ import cartAction from '../../../actions/cartAction';
 	
 		loadHomeLis=()=>{
 				const data=require('../cartdata/cart.json');
-				console.log(data.data.customFloor[1].data[0].products
-				)
+//				console.log(data.data.customFloor[1].data[0].products
+//				)
        			 this.setState({
        			  datalis:data.data.customFloor[1].data[0].products
      		 })
@@ -41,9 +42,45 @@ import cartAction from '../../../actions/cartAction';
 			
 				
 	}
-
+jian=()=>{
+		var a=this.state.num-1;
+		if(a<=1){
+			this.setState({
+			num:1
+		})
+		}else{
+			this.setState({
+			num:a
+		})
+		}
+		
+//		console.log(this.state.num)
+		
+	}
+		
+	jia=()=>{
+		
+		var a=this.state.num+1;
+		this.setState({
+			num:a
+		})
+//		console.log(this.state.num)
+	}
+	numChange=()=>{
+		
+	}
+	
+//	handleRemove(id){
+//		console.log(id)
+//	
+//		this.props.dispatch({
+//			type:'REMOVE_FROM_CART',
+//			payload:id
+//		})
+//	}
+	
   render() {
-  	console.log('Cart:',this.props.goodslist);
+	console.log('Cart:',this.props);
         let {remove,changeQty,goodslist,clear} = this.props;
   	
     return (
@@ -55,7 +92,7 @@ import cartAction from '../../../actions/cartAction';
       			<ul>
       				{
       					goodslist.map(item=>{
-      					console.log(item.skuid)
+      				
       					return <li key={item.skuid}>
       							<div className="conl">
     	 							<Checkbox onChange={this.onChange}></Checkbox>  							
@@ -75,11 +112,11 @@ import cartAction from '../../../actions/cartAction';
       								</div>
       								<div className="conrb">
       									<div>
-      										<i className="iconfont icon-iconjian"></i>
-      										<input type="text" value={item.num}/>
-      										<i className="iconfont icon-jiahao"></i>
-      										
+      										<i className="iconfont icon-iconjian" onChange={(num)=>{changeQty(item.id,num)}}></i>
+      										<input type="text" value={item.num}  min={1} onChange={(num)=>{changeQty(item.id,num)}}/>
+      										<i className="iconfont icon-jiahao"  onChange={(num)=>{changeQty(item.id,num)}}></i>
       									</div>
+      									<span onClick={this.props.remove.bind(this,item.skuid)}>删除</span>
       								</div>
       								
       							</div>
@@ -97,7 +134,7 @@ import cartAction from '../../../actions/cartAction';
 // connect([mapStateToProps],[mapDispatchToProps])
 // 默认映射dispath到props
 const mapStateToProps = state=>{
-	console.log(state)
+//	console.log(state)
     return {
         goodslist:state.cart.goodslist
     }
@@ -106,17 +143,32 @@ const mapStateToProps = state=>{
 const mapDispatchToProps = dispatch=>{
     return {
         remove(id){
-            dispatch(cartAction.remove(id))
+//          dispatch(cartAction.remove(id))
+			dispatch({
+			type:'REMOVE_FROM_CART',
+			payload:id
+		})
         },
-        changeQty(id,qty){
-            dispatch(cartAction.changeQty(id,qty))
+        changeQty(id,num){
+        	console.log(num)
+            dispatch({
+            	type:'UPDATA_QTY',
+            	payload:{id,num}
+            })
         },
-        clear(){
-            dispatch(cartAction.clear())
-        }
+//      clear(){
+//          dispatch(cartAction.clear())
+//      }
     }
 }
 CartInf = connect(mapStateToProps,mapDispatchToProps)(CartInf);	
+
+//CartInf = connect(state=>{
+//	
+//		return{
+//			goodslist:state.cart.goodslist
+//		}
+//})(CartInf);
 
 
 export default CartInf;

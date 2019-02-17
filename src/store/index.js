@@ -5,5 +5,5 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 import reducer from '../reducer';
 
 let store = createStore(reducer,composeWithDevTools());//{cart,goods}
-
+//let store = createStore(reducer,initState);//{cart,goods}
 export default store;

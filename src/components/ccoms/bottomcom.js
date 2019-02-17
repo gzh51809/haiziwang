@@ -29,7 +29,7 @@ export default class BottomCom extends React.Component{
 				            		     </NavLink>				            		   
 				                    </div>
 				                     <div>  
-				                        <NavLink to="/cart" replace>
+				                        <NavLink to="/cart">
 				                               <i className="iconfont icon-gouwuche"></i>
 				            					<p>购物车</p>
 				            		     </NavLink>				            		   

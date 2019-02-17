@@ -16,8 +16,8 @@ export default class Publics8 extends React.Component{
 	
 		loadHomeLis=()=>{
 				const data=require('./homejson/data1.json');
-				console.log(data.data.customFloor[2].data
-				)
+//				console.log(data.data.customFloor[2].data
+//				)
        			 this.setState({
        			  datalis:data.data.customFloor[2].data
      		 })
@@ -35,8 +35,7 @@ export default class Publics8 extends React.Component{
 				<ul>
 					{
 						this.state.datalis[7].products.map(item=>{
-							console.log(item
-				)
+				
 							return <li key={item.skuid}>
 								<img src={item.picurl}/>
 								<p className="pname">

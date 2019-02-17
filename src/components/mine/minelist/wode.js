@@ -12,7 +12,7 @@ export default class WoDe extends React.Component{
 		return <div className="wode">
 				<img src="http://userpic-10004025.image.myqcloud.com/c8ec45dc-64fb-46e6-936c-00e2b51fc166?imageView2/w/110/h/110/q/80" alt=""/>
 				<div>
-					<p>sudh jidi</p>
+					<p>{}</p>
 					<div>
 						<i className="iconfont icon-tubiao-"></i>
 						<span>银卡会员</span>

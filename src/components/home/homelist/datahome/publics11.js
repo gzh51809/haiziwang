@@ -16,8 +16,8 @@ export default class Publics11 extends React.Component{
 	
 		loadHomeLis=()=>{
 				const data=require('./homejson/data1.json');
-				console.log(data.data.customFloor[2].data
-				)
+//				console.log(data.data.customFloor[2].data
+//				)
        			 this.setState({
        			  datalis:data.data.customFloor[2].data
      		 })

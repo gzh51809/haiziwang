@@ -2,7 +2,8 @@ import React from 'react';
 import './detailsass/detail.scss';
 import {connect} from 'react-redux';
 import {add,changeQty} from '../../actions/cartAction';
-
+import { Badge, Icon , Menu} from 'antd';
+ 
  class Detail extends React.Component{
 	constructor(props){
 		super(props)
@@ -25,8 +26,8 @@ import {add,changeQty} from '../../actions/cartAction';
 		}
 		loadHomeLis=()=>{
 				const data=require('./detailjson/detail.json');
-				console.log(data.rmdlist
-				)
+//				console.log(data.rmdlist
+//				)
        			 this.setState({
        			  details:data.rmdlist
      		 })
@@ -37,12 +38,12 @@ import {add,changeQty} from '../../actions/cartAction';
 		loadcom=()=>{
 			
 			var id=this.props.history.location.pathname.split(":")[1];
-			console.log(id);
-			console.log(this.state.details)
+//			console.log(id);
+//			console.log(this.state.details)
 			this.state.details.forEach(item=>{
 				if(id==item.skuid){
-					console.log(id)
-					console.log(item)
+//					console.log(id)
+//					console.log(item)
 					
 					 this.setState({
        			 		detacom:item
@@ -50,22 +51,22 @@ import {add,changeQty} from '../../actions/cartAction';
 				}
 			})
        			
-			console.log(this.state.detacom)
+//			console.log(this.state.detacom)
 	 	
 		}
 		
 		
 	 goback = () => {
 	 	console.log(this.props.history)
-        this.props.history.go(-1);
+        this.props.history.push('/');
         
   }
 	gocart=()=>{
-		 this.props.history.replace('/cart')
+		 this.props.history.push('/cart')
 	}
 	
 	add2cart=(goods)=>{
-//		console.log(goods)
+		console.log(this.props)
 		goods={
 			skuid:this.state.detacom.skuid,
 			price:this.state.detacom.sellprice,
@@ -91,7 +92,7 @@ import {add,changeQty} from '../../actions/cartAction';
 		})
 		}
 		
-		console.log(this.state.num)
+//		console.log(this.state.num)
 		
 	}
 		
@@ -101,7 +102,7 @@ import {add,changeQty} from '../../actions/cartAction';
 		this.setState({
 			num:a
 		})
-		console.log(this.state.num)
+//		console.log(this.state.num)
 	}
 	numChange=(vlu)=>{
 		console.log(vlu)
@@ -151,14 +152,15 @@ import {add,changeQty} from '../../actions/cartAction';
 				<p>客服</p>
 				</div>
 				<div className="com">
-				<i className="iconfont icon-liwuhuodong
-"></i>
+				<i className="iconfont icon-liwuhuodong"></i>
 				<p>收藏</p>
 				</div>
-				<div className="com">
-				<i className="iconfont icon-gouwuche" onClick={this.gocart}></i>
+				
+				<div className="com">				
+				<i className="iconfont icon-gouwuche" onClick={this.gocart}></i>	
 				<p>购物车</p>
 				</div>
+				
 				<div className="comd">
 					<div className="comd1" onClick={this.add2cart.bind(this,this.state.detacom)}>加入购物车</div>
 				<div className="comd2">立即购买</div>

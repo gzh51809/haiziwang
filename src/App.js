@@ -81,7 +81,7 @@ class App extends Component {
 				      <div>
 				      			<div className="mian">
 				      				<Switch> 
-				      			  	<Route path="/home" component={Home} replace></Route>
+				      			  	<Route path="/home" component={Home}></Route>
 				      			  	<Route path="/cart" component={Cart}></Route>
 				      			  	<Route path="/mine" component={Mine}></Route>
 				      			  	<Route path="/list" component={List}></Route>
@@ -120,8 +120,8 @@ let mapDispatchToProps = (dispatch)=>{
         }
     }
 }
-
-App=withRouter(App);
 App = connect(mapStateToProps)(App);
+App=withRouter(App);
+
 
 export default App;

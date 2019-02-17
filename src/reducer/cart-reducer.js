@@ -39,7 +39,7 @@ let reducer = function(state=defaultState,action){
                 ...state,
                 goodslist:state.goodslist.map(item=>{
                     if(item.id == payload.id){
-                        item.qty = payload.qty
+                        item.num = payload.num
                     }
                     return item;
                 })

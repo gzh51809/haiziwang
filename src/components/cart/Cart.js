@@ -10,10 +10,40 @@ export default class Cart extends React.Component{
 		}
 		this.goback = this.goback.bind(this);
 	}
-	goback=()=>{
-			console.log(this.props.history)
-        this.props.history.goBack();
+	
+	
+	goback(){
+//			console.log(this.props.history)
+			this.props.history.goBack();
+        
 	}
+	
+//	async componentWillMount(){
+//		let {history} = this.props;
+////		//获取token
+//		let token=localStorage.getItem('token');
+//		this.setState({
+//			token
+//		})
+//		if(!token){
+//			history.push('/login')
+//		}else{
+////			//发送后端验证
+//			let res= axios.get('/verifytoken',{
+//				headers:{ 
+//					token
+//				}
+//			});
+//			res = res.data
+//			if(res.code==302){
+//				history.push('/login')
+//			}
+//		}
+//	}
+	
+//	shouldComponentUpdate(){
+//		return !!this.state.token
+//	}
 	
 	render(){
 		return <div className="cart">
